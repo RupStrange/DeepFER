@@ -1,177 +1,145 @@
+# 🧠 SentioVision
+### Real-Time Facial Emotion Recognition using Deep Learning
+<br><br>
 
-# **SentioVision**
+## 🔍 About the Project
+**SentioVision** is a real-time **facial emotion recognition system** that identifies human emotions from facial expressions using deep learning.  
+The project showcases both **foundational CNN design** and **modern transfer learning techniques** for improved accuracy and robustness.
 
-**Real-time Facial Emotion Recognition using CNNs and EfficientNet-based Transfer Learning**
+### 🔧 Core Approaches
+* 🧠 **Custom CNN** built from scratch to understand fundamentals  
+* ⚡ **EfficientNet (Transfer Learning)** for better generalization and performance
+<br><br>
 
-**SentioVision** is a real-time facial emotion recognition system designed to accurately identify human emotions from facial expressions. The project combines **custom Convolutional Neural Networks (CNNs)** with **EfficientNet-based transfer learning**, achieving high accuracy and strong generalization.
+### 😃 Emotion Classes
+> 😠 Angry • 😢 Sad • 😄 Happy • 😨 Fear • 😐 Neutral • 🤢 Disgust • 😲 Surprise
+<br><br>
 
-The system classifies facial images into **seven emotion categories**:
-**Angry, Sad, Happy, Fear, Neutral, Disgust, Surprise**.
+This project bridges **theory and practice**, making it suitable for **learning, experimentation, and real-world demos**.
+<br><br>
 
-By integrating **from-scratch CNN experimentation** with **state-of-the-art EfficientNet models**, SentioVision demonstrates mastery of both fundamental deep learning concepts and modern optimization techniques.
+## 🎯 Potential Applications
+* 🧘 Mental health & emotion monitoring  
+* 🛍️ Customer feedback and sentiment analysis  
+* 🤖 Human–Computer Interaction (HCI) systems
+<br><br>
 
-**Potential Applications:**
+## 📘 Project Overview
+| Notebook | Description |
+|--------|-------------|
+| `FER_Code.ipynb` | CNN implemented from scratch (baseline model) |
+| `FER_Code_EfficientNet.ipynb` | EfficientNet-based transfer learning model |
+| `webcam.ipynb` | Real-time emotion detection using webcam |
 
-* Mental health monitoring
-* Customer feedback analysis
-* Human–computer interaction
 
----
+> **Note:**  
+> Webcam detection requires a trained model.  
+> * Use the **pre-trained model** at `models/emotion_model.keras`, **or**  
+> * Train your own model using one of the training notebooks.
+<br><br>
 
-## **Project Overview**
+## 🧩 Dataset Setup (FER2013)
+1. Download the **FER2013 dataset** from Kaggle  
+2. Create a folder named `original_images` in the project root  
+3. Inside it, create `train/` and `test/` directories  
+4. Place images accordingly  
+<br>
 
-| Notebook                      | Description                                                            |
-| ----------------------------- | ---------------------------------------------------------------------- |
-| `FER_Code.ipynb`              | CNN implemented from scratch. Achieves lower accuracy.                 |
-| `FER_Code_EfficientNet.ipynb` | Builds on EfficientNet, giving better accuracy.                        |
-| `webcam.ipynb`                | Uses the trained model to detect emotions in real-time using a webcam. |
-
-> **Note:** The webcam code requires a trained model. You can either:
->
-> * Use the **pre-trained model** in `models/emotion_model.keras`
-> * Or **train your own** by running either `FER_Code.ipynb` or `FER_Code_EfficientNet.ipynb`.
-
----
-
-## **Dataset Instructions**
-
-1. Download the **FER2013 dataset** from Kaggle: [FER2013 Dataset](https://www.kaggle.com/datasets/msambare/fer2013)
-2. Create a folder named `original_images` in the project root.
-3. Inside `original_images`, create `train/` and `test/` subfolders.
-4. Place training images in `original_images/train/` and test images in `original_images/test/`.
-
-**Folder structure:**
 
 ```
 original_images/
-├─ train/
-└─ test/
+├── train/
+└── test/
 ```
 
----
+<br><br>
 
-## **Usage Instructions**
+## ▶️ Usage Guide
 
-### **Option 1 – Use Pre-trained Model**
+### ✅ Option 1: Use Pre-trained Model
+1. Ensure `models/emotion_model.keras` exists  
+2. Run `webcam.ipynb`  
+3. Start real-time emotion recognition  
 
-1. Ensure `models/emotion_model.keras` is present.
-2. Run `webcam.ipynb` to start **real-time emotion detection**.
+### 🛠️ Option 2: Train Your Own Model
+1. Run:  
+   * `FER_Code.ipynb` **(CNN)**  
+   * **or** `FER_Code_EfficientNet.ipynb` **(EfficientNet)**  
+2. Best model is automatically saved using callbacks  
+3. Model is stored as `models/emotion_model.keras`  
+4. Run `webcam.ipynb` for live detection  
+<br>
 
-### **Option 2 – Train Your Own Model**
+> ⚠️ **Warning:**  
+> Training multiple notebooks without renaming the model file will overwrite the previous model.
+<br><br>
 
-1. Run `FER_Code.ipynb` (CNN from scratch) or `FER_Code_EfficientNet.ipynb` (EfficientNet).
-2. Training uses **callbacks** to save the best model and optimize training.
-3. The best model is saved as `models/emotion_model.keras`.
-4. Run `webcam.ipynb` to start **real-time detection**.
-
-> ⚠️ **Important:** If you train multiple notebooks without renaming/moving the saved model, the previous model will be **overwritten**.
-
----
-
-## **Project Folder Structure**
-
+## 📂 Project Structure
 ```
 emotion_recognition_project/
-├─ code/
-│  ├─ FER_Code.ipynb
-│  ├─ FER_Code_EfficientNet.ipynb
-│  └─ webcam.ipynb
-├─ models/
-│  └─ emotion_model.keras
-├─ original_images/
-│  ├─ train/
-│  └─ test/
-└─ README.md
+├── code/
+│   ├── FER_Code.ipynb
+│   ├── FER_Code_EfficientNet.ipynb
+│   └── webcam.ipynb
+├── models/
+│   └── emotion_model.keras
+├── original_images/
+│   ├── train/
+│   └── test/
+├── assets/
+│   ├── banner.png
+│   └── demo.gif
+└── README.md
 ```
 
----
 
-## **📦 Required Libraries & Installation**
+<br><br>
 
-### **Install Packages**
+## 📸 Demo
+<p align="center">
+  <img src="assets/demo.gif" alt="Real-time Emotion Detection Demo" width="600"/>
+</p>
+<br><br>
 
-Run these commands in your terminal:
+<h2>📦 Installation &amp; Requirements</h2>
 
-```bash
-# TensorFlow and Keras for model training
-pip install tensorflow keras
+<pre><code>pip install tensorflow keras opencv-python matplotlib seaborn pillow numpy pandas tqdm scikit-learn facenet-pytorch
+</code></pre>
 
-# OpenCV for webcam input
-pip install opencv-python
+<br><br>
 
-# Image processing, plotting, and data handling
-pip install matplotlib seaborn pillow numpy pandas tqdm
+<h2>🧠 Notes for Beginners</h2>
 
-# Metrics and evaluation
-pip install scikit-learn
+<ul>
+  <li><b>CNN layers (Conv2D, MaxPooling2D)</b> → used in scratch model</li>
+  <li><b>EfficientNet</b> → required only for transfer learning</li>
+  <li><b>OpenCV + load_model</b> → used in webcam inference</li>
+  <li><b>MTCNN</b> → optional face detection before emotion prediction</li>
+</ul>
 
-# Optional: Face detection for webcam (MTCNN)
-pip install facenet-pytorch
-```
+<br><br>
 
-> ✅ **Tip:** Install everything at once:
+<h2>📄 License</h2>
 
-```bash
-pip install tensorflow keras opencv-python matplotlib seaborn pillow numpy pandas tqdm scikit-learn facenet-pytorch
-```
+<p>
+This project is open for <b>learning, research, and experimentation</b>.<br>
+Feel free to modify and adapt it.
+</p>
 
----
+<br><br>
 
-## **Step 1: Import Libraries**
+<h2>🤝 Contributing</h2>
 
-### **For CNN / EfficientNet Training**
+<p>Contributions are welcome 🚀</p>
 
-```python
-import os
-import warnings
-warnings.filterwarnings("ignore")
+<ul>
+  <li>Report bugs or request features via Issues</li>
+  <li>Submit Pull Requests for improvements</li>
+  <li>Share ideas to improve accuracy or performance</li>
+</ul>
 
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-from PIL import Image
-from tqdm import tqdm
+<br><br>
 
-import tensorflow as tf
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import (
-    Conv2D, MaxPooling2D, Flatten, Dense, Dropout, BatchNormalization,
-    Rescaling, RandomFlip, RandomRotation, RandomZoom
-)
-from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
-from tensorflow.keras.utils import image_dataset_from_directory
-
-from tensorflow.keras.applications import EfficientNetB0
-from tensorflow.keras.applications.efficientnet import preprocess_input
-
-from sklearn.metrics import confusion_matrix, classification_report
-```
-
-### **For Webcam Emotion Detection**
-
-```python
-import os
-import warnings
-warnings.filterwarnings("ignore")
-
-import numpy as np
-import matplotlib.pyplot as plt
-from PIL import Image
-
-import tensorflow as tf
-from tensorflow.keras.models import load_model
-
-import cv2  # Webcam
-```
-
----
-
-## **Step 2: Notes for Beginners**
-
-1. **EfficientNet imports** → only needed if using **transfer learning**.
-2. **Conv2D, MaxPooling2D, etc.** → for training CNN from scratch.
-3. **OpenCV and load_model** → only required for **webcam detection**.
-4. **MTCNN** → optional, only if you want **face detection** before emotion prediction.
-
-
+<p align="center">
+  <b>⭐ If you find this project helpful, consider starring the repository!</b>
+</p>
